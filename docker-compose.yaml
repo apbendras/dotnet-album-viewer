@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  app:
+   image: apbendras/dotnet-album-viewer
+   ports: 
+    - 80:80
+   environment: 
+    - "Data:Provider=MySQL"
+    - "Data:ConnectionString=Server=db;Port=4000;Database=AlbumViewer;User=root;SslMode=None"
+    
+   
+  db:
+   image: dockersamples/tidb:nanoserver-sac2016
